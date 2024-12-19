@@ -35,7 +35,7 @@ async def admin_id() -> str:
     return f"Вы вошли как администратор"
 
 @app.get('/user/{user_id}')
-async def id_user(user_id: Annotated[int, Path(ge=1, le=100, description="Enter User ID")]) -> str:
+async def id_user(user_id: Annotated[int, Path(ge=1, le=100, description="Enter User ID")]):
     return f"Вы вошли как пользователь № {user_id}"
 
 @app.get('/user/{username}/{age}')
